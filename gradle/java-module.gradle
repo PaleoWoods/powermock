@@ -1,0 +1,31 @@
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+group = "org.powermock"
+
+apply plugin: 'propdeps'
+apply plugin: 'propdeps-maven'
+apply plugin: 'java'
+
+targetCompatibility = 1.6
+sourceCompatibility = 1.6
+
+tasks.withType(JavaCompile) {
+    options.warnings = false
+}
+
+if (JavaVersion.current() == JavaVersion.VERSION_1_8) {
+    apply plugin: 'checkstyle'
+    checkstyle {
+        toolVersion = checkstyleVersion
+        configFile = rootProject.file('config/checkstyle/checkstyle.xml')
+    }
+}
+
+test{
+    exclude "**/*Defect*", "**/*TestCase*"
+}
+

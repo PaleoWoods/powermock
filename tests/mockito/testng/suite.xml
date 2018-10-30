@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="PowerMockito TestNG" verbose="10" object-factory="org.powermock.modules.testng.PowerMockObjectFactory">
+    <test name="General">
+        <classes>
+            <class name="samples.powermockito.testng.staticmocking.MockStaticNotPreparedTest"/>
+            <class name="samples.powermockito.testng.staticmocking.MockStaticPreparedWithoutMockStaticTest"/>
+        </classes>
+    </test>
+</suite>
